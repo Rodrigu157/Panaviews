@@ -4,6 +4,7 @@ function obtenerCategorias() {
         .then(data => {
             const categoriasList = document.getElementById('categorias-list');
             data.forEach(categoria => {
+                console.log(categoria)
                 const li = document.createElement('li');
                 li.textContent = categoria.nombre;
                 categoriasList.appendChild(li);

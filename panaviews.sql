@@ -27,7 +27,7 @@ CREATE TABLE `categoria` (
   `nombre` varchar(45) NOT NULL,
   PRIMARY KEY (`categoria_id`),
   UNIQUE KEY `nombre` (`nombre`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,7 +56,7 @@ CREATE TABLE `corregimientos` (
   UNIQUE KEY `nombre` (`nombre`),
   KEY `distrito_id` (`distrito_id`),
   CONSTRAINT `corregimientos_ibfk_1` FOREIGN KEY (`distrito_id`) REFERENCES `distrito` (`distrito_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,7 +83,7 @@ CREATE TABLE `distrito` (
   PRIMARY KEY (`distrito_id`),
   KEY `fk_provincia` (`provincia_id`),
   CONSTRAINT `fk_provincia` FOREIGN KEY (`provincia_id`) REFERENCES `provincia` (`provincia_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -108,7 +108,7 @@ CREATE TABLE `edad` (
   `nombre` varchar(45) NOT NULL,
   PRIMARY KEY (`edad_id`),
   UNIQUE KEY `nombre` (`nombre`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,7 +156,7 @@ CREATE TABLE `eventos` (
   CONSTRAINT `fk_edad` FOREIGN KEY (`edad_id`) REFERENCES `edad` (`edad_id`),
   CONSTRAINT `fk_precio1` FOREIGN KEY (`precio_id`) REFERENCES `precio` (`precio_id`),
   CONSTRAINT `fk_provincia1` FOREIGN KEY (`provincia_id`) REFERENCES `provincia` (`provincia_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -204,7 +204,7 @@ CREATE TABLE `lugares` (
   CONSTRAINT `lugares_ibfk_1` FOREIGN KEY (`corregimientos_id`) REFERENCES `corregimientos` (`corregimientos_id`),
   CONSTRAINT `lugares_ibfk_2` FOREIGN KEY (`distrito_id`) REFERENCES `distrito` (`distrito_id`),
   CONSTRAINT `lugares_ibfk_3` FOREIGN KEY (`provincia_id`) REFERENCES `provincia` (`provincia_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -234,7 +234,7 @@ CREATE TABLE `opiniones` (
   CONSTRAINT `fk_opiniones1` FOREIGN KEY (`lugares_id`) REFERENCES `lugares` (`lugares_id`),
   CONSTRAINT `fk_opiniones2` FOREIGN KEY (`restaurante_id`) REFERENCES `restaurante` (`restaurante_id`),
   CONSTRAINT `opiniones_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -258,7 +258,7 @@ CREATE TABLE `precio` (
   `nombre` varchar(45) NOT NULL,
   PRIMARY KEY (`precio_id`),
   UNIQUE KEY `nombre` (`nombre`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -282,7 +282,7 @@ CREATE TABLE `provincia` (
   `provincia_id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
   PRIMARY KEY (`provincia_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -327,7 +327,7 @@ CREATE TABLE `restaurante` (
   CONSTRAINT `fk_distrito` FOREIGN KEY (`distrito_id`) REFERENCES `distrito` (`distrito_id`),
   CONSTRAINT `fk_precio` FOREIGN KEY (`precio_id`) REFERENCES `precio` (`precio_id`),
   CONSTRAINT `fk_provincia2` FOREIGN KEY (`provincia_id`) REFERENCES `provincia` (`provincia_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -352,7 +352,7 @@ CREATE TABLE `tipo` (
   PRIMARY KEY (`tipo_id`),
   UNIQUE KEY `tipo_id` (`tipo_id`),
   UNIQUE KEY `nombre` (`nombre`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -386,7 +386,7 @@ CREATE TABLE `user` (
   UNIQUE KEY `correo` (`correo`),
   KEY `fk_tipo` (`tipo_id`),
   CONSTRAINT `fk_tipo` FOREIGN KEY (`tipo_id`) REFERENCES `tipo` (`tipo_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
