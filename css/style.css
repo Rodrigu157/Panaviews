@@ -1,0 +1,76 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+  
+  /* Header */
+  header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),url("../img/Panama-city-skyline-header.jpg");
+    background-size: cover;
+    background-position: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    color: #f8f9fa;
+    padding: 1em;
+  }
+  
+  .menu-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+  }
+  
+  .menu-icon {
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  /* Menú desplegable para móvil */
+  .mobile-menu {
+    display: none;
+    background-color: #f8f9fa;
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .mobile-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .mobile-menu li a {
+    display: block;
+    padding: 1em;
+    color: #353535;
+    text-decoration: none;
+  }
+  
+  .mobile-menu li a:hover {
+    background-color: #284B63;
+    color: #f8f9fa;
+  }
+  
+  /* Sección de contenido */
+  .content {
+    padding: 2em;
+    
+  }
+  
+  /* Mostrar menú en dispositivos móviles */
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+    .mobile-menu {
+      display: none; /* Se mostrará mediante JavaScript */
+    }
+  }
