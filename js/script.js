@@ -35,40 +35,49 @@ window.addEventListener('scroll', () => {
   lastScrollPosition = currentScrollPosition;
 });
 
-let currentSlide = 0;
+
+let currentIndex = 0;
+const provincias =['Bocas del Toro', 'Chiriqui', 'Veraguas', 'Herrera', 'Los Santos', 'Cocle', 'Panama Oeste', 'Panama', 'Colon', 'Darien']
+const nombre_provincia = document.getElementById('nombre_provincia')
+const carousel = document.getElementById('carousel');
+const images = document.querySelectorAll('.carousel img');
+const totalImages = document.querySelectorAll('.carousel img').length;
+let autoplayInterval;
 
 function updateCarousel() {
-    const carouselTrack = document.querySelector('.carousel-track');
-    const totalImages = document.querySelectorAll('.carousel-image').length;
-    
-    // Calcula el número total de "slides" (grupos de dos imágenes)
-    const totalSlides = Math.ceil(totalImages);
-
-    // Calcula el desplazamiento en porcentaje, multiplicado por el índice del slide actual
-    carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+  const containerWidth = carousel.parentElement.clientWidth;
+  carousel.style.width = `${containerWidth * totalImages}px`; // Establece el ancho total del carrusel
+  images.forEach(image => {
+    image.style.width = `${containerWidth}px`; // Cada imagen ocupa el ancho del contenedor
+  });
+  carousel.style.transform = `translateX(${-currentIndex * containerWidth}px)`;
+  nombre_provincia.textContent = provincias[currentIndex]
 }
 
-function nextSlide() {
-    const totalImages = document.querySelectorAll('.carousel-image').length;
-    const totalSlides = Math.ceil(totalImages);
-
-    if (currentSlide < totalSlides - 1) {
-        currentSlide++;
-        updateCarousel();
-    }else{
-        currentSlide = 0;
-        updateCarousel();
-    }
+function goToSlide(index) {
+  currentIndex = (index + totalImages) % totalImages; // Asegura que el índice esté en el rango
+  updateCarousel();
+  resetAutoplay();
 }
 
 function previousSlide() {
-  const totalImages = document.querySelectorAll('.carousel-image').length;
-  const totalSlides = Math.ceil(totalImages);
-    if (currentSlide > 0) {
-        currentSlide--;
-        updateCarousel();
-    }else{
-      currentSlide = totalSlides - 1;
-      updateCarousel();
-  }
+  goToSlide(currentIndex - 1);
 }
+
+function nextSlide() {
+  goToSlide(currentIndex + 1);
+}
+
+
+function startAutoplay() {
+  autoplayInterval = setInterval(nextSlide, 5000); 
+}
+function resetAutoplay() {
+  clearInterval(autoplayInterval); // Detiene el autoplay actual
+  startAutoplay(); // Reinicia el autoplay
+}
+
+window.addEventListener('resize', updateCarousel);
+
+updateCarousel()
+startAutoplay();
