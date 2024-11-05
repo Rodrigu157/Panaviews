@@ -12,6 +12,10 @@ h2{
     font-family: "Playwrite GB S", cursive;
     font-size: 3em;
 }
+.resaltar{
+    background-color: #a2d6ff;
+    font-weight: 800;
+}
 
 /* Header */
 header {
