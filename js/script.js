@@ -1,3 +1,6 @@
+// Variable para guardar la posición anterior del scroll
+let lastScrollPosition = 0;
+
 const getScrollBarWidth = () => innerWidth - document.documentElement.clientWidth
 document.documentElement.style.setProperty('--scrollbar-width', getScrollBarWidth())
 
@@ -9,8 +12,7 @@ function toggleMenu() {
   // Selecciona el header
 const menuBar = document.getElementById('menu-bar');
 const mobileMenu = document.getElementById('mobile-menu')
-// Variable para guardar la posición anterior del scroll
-let lastScrollPosition = 0;
+
 
 // Detecta el scroll en la ventana
 window.addEventListener('scroll', () => {
