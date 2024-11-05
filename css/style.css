@@ -10,7 +10,7 @@ body {
 }
 h2{
     font-family: "Playwrite GB S", cursive;
-    font-size: 4em;
+    font-size: 3em;
 }
 
 /* Header */
@@ -37,6 +37,7 @@ h1 {
 .menu-icon {
     font-size: 1.5em;
     cursor: pointer;
+    margin-right: 1em;
 }
 
 /* Menú desplegable*/
@@ -110,10 +111,8 @@ h1 {
 }
 
 .info1{
-  display: grid;
-  grid-template-columns: 1fr; /* Dos columnas iguales */
-  gap: 20px; /* Espacio entre imagen y texto */
   margin-bottom: 2em;
+  text-align: center
 }
 
 .info1 div{
@@ -176,64 +175,6 @@ h1 {
     font-weight: bold;
     border-radius: .7rem;
 }
-
-.infoLugares{
-    text-align: center;
-    margin-bottom: 10dvh;
-}
-
-.carousel-container {
-    display: flex;
-    align-items: center;
-    width: 100dvw; /* Ajusta el tamaño del contenedor */
-    overflow: hidden;
-    position: relative;
-}
-
-.carousel-track-container {
-    overflow: hidden;
-    width: 100%;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.carousel-image {
-    width: 100%; /* Muestra dos imágenes ocupando cada una el 50% del contenedor */
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  
-}
-
-.carousel-button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 2em;
-    padding: 0 10px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-}
-.prev {
-    left: 0;
-}
-.next {
-    right: 0;
-}
-
-.sombra{
-    width: 80dvw;
-    height: 100px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5));  
-    border-radius: 100px / 50px;
-    transform: perspective(500px) rotateX(65deg);
-    margin: 0 auto;
-}
-
 .infoTestimonios{
     text-align: center;
 }
@@ -255,16 +196,16 @@ h1 {
     background-position: center;
 }
 #op1{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),url(../img/persona1.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),url(../img/museoCatolico.jpg);
 }
 #op2{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)),url(../img/persona2.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)),url(../img/museoMolas.jpg);
 }
 #op3{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)),url(../img/persona3.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)),url(../img/plazaFrancia.jpg);
 }
 #op4{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)),url(../img/persona4.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)),url(../img/summit.JPG);
 }
 
 .opiniones{
@@ -314,4 +255,18 @@ footer .redes img{
     width: 40px;
     height: 40px;
     margin-bottom: 2em;
+}
+
+@media (min-width:960px) {
+    .info1{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 5em 2em;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .info1 h2{
+        margin: 0;
+    }
 }

@@ -1,59 +1,93 @@
-function obtenerCategorias() {
-    fetch('categoria.php')
+function obtenerProvincias() {
+    fetch('../PhP/provincia.php')
         .then(response => response.json())
         .then(data => {
-            const categoriasList = document.getElementById('categorias-list');
-            data.forEach(categoria => {
-                console.log(categoria)
-                const li = document.createElement('li');
-                li.textContent = categoria.nombre;
-                categoriasList.appendChild(li);
+            const provinciaList = document.getElementById('provincias');
+            data.forEach(provincia => {
+                const option = document.createElement('option');
+                option.id = provincia.provincia_id;
+                option.textContent = provincia.nombre;
+                provinciaList.appendChild(option);
             });
         })
-        .catch(error => console.error('Error al obtener categorías:', error));
-}
-
-function obtenerCorregimientos() {
-    fetch('corregimientos.php')
-        .then(response => response.json())
-        .then(data => {
-            const corregimientosList = document.getElementById('corregimientos-list');
-            data.forEach(corregimiento => {
-                const li = document.createElement('li');
-                li.textContent = corregimiento.nombre;
-                corregimientosList.appendChild(li);
-            });
-        })
-        .catch(error => console.error('Error al obtener corregimientos:', error));
+        .catch(error => console.error('Error al obtener provincias:', error));
 }
 
 function obtenerDistritos() {
-    fetch('distrito.php')
+    fetch('../PhP/distrito.php')
         .then(response => response.json())
         .then(data => {
-            const distritosList = document.getElementById('distritos-list');
+            const distritosList = document.getElementById('distritos');
             data.forEach(distrito => {
-                const li = document.createElement('li');
-                li.textContent = distrito.nombre;
-                distritosList.appendChild(li);
+                const option = document.createElement('option');
+                option.id = distrito.distrito_id;
+                option.textContent = distrito.nombre;
+                distritosList.appendChild(option);
             });
         })
         .catch(error => console.error('Error al obtener distritos:', error));
 }
 
-function obtenerEdad() {
-    fetch('edad.php')
+function obtenerCorregimientos() {
+    fetch('../PhP/corregimientos.php')
         .then(response => response.json())
         .then(data => {
-            const edadList = document.getElementById('edad-list');
+            const corregimientosList = document.getElementById('corregimientos');
+            data.forEach(corregimiento => {
+                const option = document.createElement('option');
+                option.id = corregimiento.corregimientos_id;
+                option.textContent = corregimiento.nombre;
+                corregimientosList.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error al obtener corregimientos:', error));
+}
+
+function obtenerCategorias() {
+    fetch('../PhP/categoria.php')
+        .then(response => response.json())
+        .then(data => {
+            const categorias = document.getElementById('categorias');
+            data.forEach(categoria => {
+                const option = document.createElement('option');
+                option.id = categoria.categoria_id;
+                option.textContent = categoria.nombre;
+                categorias.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error al obtener categorías:', error));
+}
+
+function obtenerEdad() {
+    fetch('../PhP/edad.php')
+        .then(response => response.json())
+        .then(data => {
+            const edades = document.getElementById('edades');
             data.forEach(edad => {
-                const li = document.createElement('li');
-                li.textContent = edad.nombre;
-                edadList.appendChild(li);
+                const option = document.createElement('option');
+                option.id = edad.edad_id;
+                option.textContent = edad.nombre;
+                edades.appendChild(option);
             });
         })
         .catch(error => console.error('Error al obtener edad:', error));
 }
+
+function obtenerPrecios() {
+    fetch('../PhP/precio.php')
+        .then(response => response.json())
+        .then(data => {
+            const precioList = document.getElementById('precios');
+            data.forEach(precio => {
+                const option = document.createElement('option');
+                option.id = precio.precio_id;
+                option.textContent = precio.nombre;
+                precioList.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error al obtener precios:', error));
+}
+
 
 function obtenerEventos() {
     fetch('eventos.php')
@@ -97,33 +131,7 @@ function obtenerOpiniones() {
         .catch(error => console.error('Error al obtener opiniones:', error));
 }
 
-function obtenerPrecios() {
-    fetch('precio.php')
-        .then(response => response.json())
-        .then(data => {
-            const precioList = document.getElementById('precio-list');
-            data.forEach(precio => {
-                const li = document.createElement('li');
-                li.textContent = precio.nombre;
-                precioList.appendChild(li);
-            });
-        })
-        .catch(error => console.error('Error al obtener precios:', error));
-}
 
-function obtenerProvincias() {
-    fetch('provincia.php')
-        .then(response => response.json())
-        .then(data => {
-            const provinciaList = document.getElementById('provincia-list');
-            data.forEach(provincia => {
-                const li = document.createElement('li');
-                li.textContent = provincia.nombre;
-                provinciaList.appendChild(li);
-            });
-        })
-        .catch(error => console.error('Error al obtener provincias:', error));
-}
 
 function obtenerRestaurantes() {
     fetch('restaurante.php')
@@ -168,15 +176,21 @@ function obtenerUsuarios() {
 }
 
 // Llamar a las funciones para obtener los datos al cargar la página
-obtenerCategorias();
-obtenerCorregimientos();
+obtenerProvincias();
 obtenerDistritos();
+obtenerCorregimientos();
+obtenerCategorias();
 obtenerEdad();
+obtenerPrecios();
+/*
+
+
 obtenerEventos();
 obtenerLugares();
 obtenerOpiniones();
-obtenerPrecios();
-obtenerProvincias();
+
+
 obtenerRestaurantes();
 obtenerTipos();
 obtenerUsuarios();
+*/
