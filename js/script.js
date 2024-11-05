@@ -37,7 +37,7 @@ window.addEventListener('scroll', () => {
 
 
 let currentIndex = 0;
-const provincias =['Bocas del Toro', 'Chiriqui', 'Veraguas', 'Herrera', 'Los Santos', 'Cocle', 'Panama Oeste', 'Panama', 'Colon', 'Darien']
+const provincias =['Bocas del Toro', 'Chiriquí', 'Veraguas', 'Herrera', 'Los Santos', 'Cocle', 'Panamá Oeste', 'Panamá', 'Colón', 'Darién']
 const nombre_provincia = document.getElementById('nombre_provincia')
 const carousel = document.getElementById('carousel');
 const images = document.querySelectorAll('.carousel img');

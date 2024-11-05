@@ -21,7 +21,13 @@ header {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
     color: #f8f9fa;
     padding: 1em;
+    height: 100dvh;
+    background-attachment: fixed; /* Hace que el fondo se mueva a velocidad diferente */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 #menu-bar {
     display: flex;
@@ -138,7 +144,6 @@ h1 {
 
 .info1 div p{
     font-size: 1.2rem;
-    border-radius: 0%;
 }
 
 .info1 img{
@@ -160,6 +165,13 @@ h1 {
     margin: 1em auto;
     border-bottom: 5px solid #244b82;
     padding-bottom: 20px;
+    color: #353535;
+}
+
+.infoProvincias p{
+    font-size: 1.2rem;
+    margin: 0 2em;
+
 }
 
 /* Estilos del contenedor */
@@ -221,7 +233,6 @@ h1 {
 }
 
 .infoSeparador ul{
-    width: 75%;
     padding-inline-start: 0%;
     list-style: none;
     display: grid;
@@ -234,18 +245,38 @@ h1 {
     padding-bottom: 2rem;
 }
 
+
 .infoSeparador ul li{
     width: 100%;
-    color: #353535;
-    background-color: #a2d6ff;
-    padding: 10px;
+    color: #fbf1de;
+    padding: 5px;
     font-weight: bold;
     border-radius: .7rem;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infoSeparador ul li img{
+    width: 80%;
+    max-width: 200px;
+    padding:10px;
+    background-color: #a2d6ff;
+    border-radius: 10px;
+    margin-bottom: 1em;
 }
 
 
 .infoLugares{
     text-align: center;
+}
+
+.infoLugares h2{
+    width: 85%;
+    margin: 1em auto;
+    border-bottom: 5px solid #244b82;
+    padding-bottom: 20px;
 }
 
 .infoLugares div{
@@ -303,15 +334,20 @@ h1 {
 }
 
 footer{
-    background-color: #353535;
-    display: grid;
-    grid-template-columns: 90%;
-    grid-template-rows: 1fr;
-    color: #fdfffc;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    background-color: #353535;
+    color: #fdfffc;
     padding: 20px;
     margin-top: 3em;
+    text-align: center;
+}
+
+footer img{
+    margin: 0 auto;
+    max-width: 200px;
 }
 footer ul{
     list-style: none;
