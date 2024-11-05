@@ -74,7 +74,7 @@ h1 {
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8); 
     background-color: #fdfffc;
     width: 100%;
     color: #353535;
@@ -109,18 +109,9 @@ h1 {
     margin-top: 1rem;
 }
 
-@media (max-width: 768px) {
-.menu-icon {
-    display: block;
-}
-.mobile-menu {
-    display: none; /* Se mostrará mediante JavaScript */
-}
-}
-
 .info1{
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+  grid-template-columns: 1fr; /* Dos columnas iguales */
   gap: 20px; /* Espacio entre imagen y texto */
   margin-bottom: 2em;
 }
@@ -130,7 +121,8 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-self: center;
-    max-width: 25dvw;
+    max-width: 90dvw;
+    margin: 0 auto;
 }
 .info1 div h2{
     color: #353535;
@@ -153,18 +145,6 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     align-self: center;
-}
-
-@media (max-width: 768px) {
-    .info1{
-        grid-template-columns: 1fr;
-
-    }
-
-    .info1 div{
-        margin: 0 1em;
-        max-width: none;
-    }
 }
 
 .infoSeparador{
@@ -195,6 +175,63 @@ h1 {
     padding: 10px;
     font-weight: bold;
     border-radius: .7rem;
+}
+
+.infoLugares{
+    text-align: center;
+    margin-bottom: 10dvh;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    width: 100dvw; /* Ajusta el tamaño del contenedor */
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-image {
+    width: 100%; /* Muestra dos imágenes ocupando cada una el 50% del contenedor */
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  
+}
+
+.carousel-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 0 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.prev {
+    left: 0;
+}
+.next {
+    right: 0;
+}
+
+.sombra{
+    width: 80dvw;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5));  
+    border-radius: 100px / 50px;
+    transform: perspective(500px) rotateX(65deg);
+    margin: 0 auto;
 }
 
 .infoTestimonios{

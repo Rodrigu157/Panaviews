@@ -34,3 +34,41 @@ window.addEventListener('scroll', () => {
   // Actualiza la última posición del scroll
   lastScrollPosition = currentScrollPosition;
 });
+
+let currentSlide = 0;
+
+function updateCarousel() {
+    const carouselTrack = document.querySelector('.carousel-track');
+    const totalImages = document.querySelectorAll('.carousel-image').length;
+    
+    // Calcula el número total de "slides" (grupos de dos imágenes)
+    const totalSlides = Math.ceil(totalImages);
+
+    // Calcula el desplazamiento en porcentaje, multiplicado por el índice del slide actual
+    carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+function nextSlide() {
+    const totalImages = document.querySelectorAll('.carousel-image').length;
+    const totalSlides = Math.ceil(totalImages);
+
+    if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateCarousel();
+    }else{
+        currentSlide = 0;
+        updateCarousel();
+    }
+}
+
+function previousSlide() {
+  const totalImages = document.querySelectorAll('.carousel-image').length;
+  const totalSlides = Math.ceil(totalImages);
+    if (currentSlide > 0) {
+        currentSlide--;
+        updateCarousel();
+    }else{
+      currentSlide = totalSlides - 1;
+      updateCarousel();
+  }
+}
