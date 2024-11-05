@@ -6,7 +6,7 @@ body {
     font-weight: 500;
     margin: 0;
     padding: 0;
-    background-color: #fdfffc;
+    background-color: #f8f9fa;
 }
 h2{
     font-family: "Playwrite GB S", cursive;
@@ -265,6 +265,31 @@ h1 {
 }
 #op4{
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)),url(../img/persona4.png);
+}
+
+.opiniones{
+    position: relative;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #353535;
+    background-color: white; /* Fondo oscuro semi-transparente */
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-size: .9em;
+    width: 90%;
+}
+
+/* Mostrar el texto al hacer hover */
+.opiniones:hover .overlay-text {
+    opacity: 1;
 }
 
 footer{
