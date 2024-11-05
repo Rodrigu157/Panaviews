@@ -133,6 +133,7 @@ h1 {
 .info1 div h2{
     color: #353535;
     font-weight: bold;
+    text-align: center;
     padding: 10px;
     border-radius: .5em;
     border-bottom: 10px solid #244b82;
@@ -191,4 +192,37 @@ h1 {
     padding: 10px;
     font-weight: bold;
     border-radius: .7rem;
+}
+
+.infoTestimonios{
+    text-align: center;
+}
+
+.infoTestimonios div{
+    display: grid;
+    grid-template-columns: 50dvw 1fr;
+    grid-template-rows: 150px 150px;
+    color: #fdfffc;
+    font-weight: bold;
+    text-align: center;
+}
+
+.infoTestimonios div div{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-size: cover;
+    background-position: center;
+}
+#op1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),url(../img/persona1.jpg);
+}
+#op2{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)),url(../img/persona2.jpg);
+}
+#op3{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)),url(../img/persona3.jpeg);
+}
+#op4{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)),url(../img/persona4.png);
 }
