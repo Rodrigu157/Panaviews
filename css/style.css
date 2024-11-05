@@ -21,10 +21,11 @@ header {
     padding: 1em;
 }
 
-.menu-bar {
+#menu-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: 0.3s ease-in-out; 
 }
 
 h1 {
@@ -44,6 +45,7 @@ h1 {
     top: 90px;
     width: 100%;
     text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8); 
 }
 
 .mobile-menu ul {
@@ -62,6 +64,20 @@ h1 {
 .mobile-menu li a:hover {
     background-color: #284B63;
     color: #f8f9fa;
+    font-weight: bold;
+}
+
+.fixed{
+    position: fixed;        
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: #fdfffc;
+    width: 100%;
+    color: #353535;
+    text-shadow: none;
+    justify-content: space-around;
 }
 
 /* Sección de contenido */
