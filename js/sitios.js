@@ -1,6 +1,6 @@
 let totalImages = 0
 function obtenerCategorias() {
-    fetch('http://localhost/proyectos/panaviews/PhP/categoria.php')
+    fetch('../PhP/categoria.php')
         .then(response => response.json())
         .then(data => {
             const categoriasContainer = document.getElementById('carousel');

@@ -193,6 +193,7 @@ header{
     }  
     .modal-content img{
         width: 60%;
+        height: auto;
     }
 }
 
@@ -203,5 +204,6 @@ header{
     }
     .modal-content img{
         width: 60%;
+        height: auto;
     }  
 }
