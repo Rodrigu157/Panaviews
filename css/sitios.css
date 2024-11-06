@@ -1,3 +1,7 @@
+main h2{
+    text-align: center;
+    color: #244b82;
+}
 header{
     background: #fff;
     height: 0;
@@ -13,6 +17,7 @@ header{
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 .categorias-container h4{
+    text-align: center;
     width: 80%;
     margin: 0 auto;
     font-size: 2em;
@@ -35,7 +40,7 @@ header{
     flex-direction: column;
     padding: 10px;
     color: #fdfffc;
-    background-color: #244b82;
+    background-color: #3877ce;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8); 
     border-radius: 30px;
     margin: 0 1em;
@@ -50,6 +55,7 @@ header{
 
 .otros-container{
     margin: 4em 0;
+
 }
 .otros-container ul{
     list-style: none;
@@ -58,16 +64,20 @@ header{
     padding: 0;
 }
 
-.sitio-box{
-    display: flex;
+.sitios-container{
+    display: grid;
     width: 90dvw;
     margin: 0 auto;
     grid-template-columns: 1fr;
-    align-items: center;
+}
+
+.sitio-box{
+    display: flex;
     background-color: whitesmoke;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9);
     text-align: center;
     margin-bottom: 1em;
+    align-items: center;
 }
 
 .sitio-box img{
@@ -87,4 +97,11 @@ header{
     border-radius: 5px;
     width: 50%;
     margin: 1em;
+}
+
+@media (min-width:960px) {
+    .sitios-container{
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
 }
