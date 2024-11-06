@@ -175,15 +175,16 @@ function obtenerUsuarios() {
         .catch(error => console.error('Error al obtener usuarios:', error));
 }
 
-// Llamar a las funciones para obtener los datos al cargar la página
+
+/*// Llamar a las funciones para obtener los datos al cargar la página
 obtenerProvincias();
 obtenerDistritos();
 obtenerCorregimientos();
-obtenerCategorias();
+
 obtenerEdad();
 obtenerPrecios();
-/*
 
+obtenerCategorias();
 
 obtenerEventos();
 obtenerLugares();
