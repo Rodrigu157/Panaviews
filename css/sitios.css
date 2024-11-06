@@ -75,6 +75,10 @@ header{
     padding: 0;
 }
 
+.otros-container ul li{
+    cursor: pointer;
+}
+
 .sitios-container{
     display: grid;
     width: 90dvw;
