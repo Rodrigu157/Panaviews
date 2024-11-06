@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pana Views.js</title>
+    <!-- Importa Leaflet.js -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 600px; /* Altura del mapa */
+            width: 100%; /* Anchura del mapa */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Pana Views</h1>
+<p>Los lugares turísticos de Panamá más recomendados y visitados, que deberías conocer.</p>
+
+<div id="map"></div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<script>
+    // Inicializa el mapa y establece la vista inicial
+    var map = L.map('map').setView([8.951, -79.533], 15);
+
+    // Carga los tiles desde OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Función para agregar marcadores
+    function addMarker(lat, lon, popupText) {
+        L.marker([lat, lon]).addTo(map).bindPopup(popupText);
+    }
+
+    // Agregar los marcadores de los puntos de interés
+    addMarker(8.9520949, -79.5326039, "Punto de reciclaje");
+    addMarker(8.9519326, -79.5324134, "Plazoleta Medio Baluarte");
+    addMarker(8.952038, -79.532301, "Mirador de los Candados");
+    addMarker(8.950844, -79.531868, "Paseo Esteban Huertas");
+    addMarker(8.950270, -79.531468, "Mirador del Capitán Raúl Chevalier");
+    addMarker(8.949475, -79.532035, "Plaza de Francia");
+    addMarker(8.9514146, -79.5333438, "Museo de Arte Religioso Colonial");
+    addMarker(8.951671, -79.533480, "Yomisun");
+    addMarker(8.9532580, -79.5333817, "Plaza Simón Bolívar");
+    addMarker(8.9531272, -79.5335316, "Punto de reciclaje");
+    addMarker(8.9523264, -79.5346249, "Plaza de la Independencia");
+    addMarker(8.9520197, -79.5346062, "Museo del Canal Interoceánico de Panamá");
+    addMarker(8.9522446, -79.5349072, "Punto de reciclaje");
+    addMarker(8.9521263, -79.5349035, "Museo de Historia de Panamá");
+    addMarker(8.9526360, -79.5351369, "Catedral Basílica Metropolitana Santa María La Antigua");
+    addMarker(8.9520283, -79.5358976, "Museo de la Mola");
+    addMarker(8.9517716, -79.5365615, "Punto de reciclaje");
+    addMarker(8.9518266, -79.5369869, "Punto de reciclaje");
+    addMarker(8.9519594, -79.5366882, "Plaza Herra");
+</script>
+
+</body>
+</html>
+```
+
+Este código añade cada uno de los puntos de interés mencionados, cada uno con sus coordenadas y una descripción para el marcador. Reemplaza el contenido actual de tu archivo HTML con este código para ver los cambios en el mapa.
