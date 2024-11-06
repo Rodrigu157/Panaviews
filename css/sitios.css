@@ -113,6 +113,72 @@ header{
     margin: 1em;
 }
 
+/* Estilos para el modal */
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Para que quede sobre el contenido */
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto; 
+    margin-top: 1em;
+    border-left: 1em solid #244b82;
+}
+.modal-content span{
+    color: #353535;
+}
+
+.modal-content h4{
+    font-size: 2.8em;
+    margin: 10px;
+
+}
+.modal-content h2 {
+    margin-top: 0;
+}
+.modal-content ul{
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    padding: 0;
+    color: #353535;
+    font-weight: 800;
+}
+
+.modal-content div ul{
+    color: black;
+    list-style: circle;
+    flex-direction: column;
+    color: black;
+    font-weight: 500;
+}
+
+/* Botón de cierre */
+#closeModalBtn {
+    margin: 1em;
+    padding: 8px 16px;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
 
 @media (min-width:640px) and (max-width:960px) {
     .sitios-container{
@@ -125,11 +191,17 @@ header{
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
     }  
+    .modal-content img{
+        width: 60%;
+    }
 }
 
 @media (min-width:1280px) {
     .sitios-container{
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 20px;
+    }
+    .modal-content img{
+        width: 60%;
     }  
 }

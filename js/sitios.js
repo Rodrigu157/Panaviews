@@ -51,3 +51,26 @@ function nextSlide() {
 }
 window.addEventListener('resize', updateCarousel);
 
+const openModalBtn = document.getElementById('openModalBtn');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const modalOverlay = document.getElementById('modalOverlay');
+
+// Mostrar el modal
+openModalBtn.addEventListener('click', () => {
+    modalOverlay.style.display = 'flex';
+    body.classList.add('no-scroll');
+});
+
+// Ocultar el modal
+closeModalBtn.addEventListener('click', () => {
+    modalOverlay.style.display = 'none';
+    body.classList.remove('no-scroll');
+});
+
+// Cerrar el modal al hacer clic en el fondo
+modalOverlay.addEventListener('click', (event) => {
+    if (event.target === modalOverlay) {
+        modalOverlay.style.display = 'none';
+        body.classList.remove('no-scroll');
+    }
+});
