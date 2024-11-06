@@ -17,6 +17,7 @@ header{
     margin: 0 auto;
     font-size: 2em;
     margin-bottom: 1em;
+    border-bottom: 4px solid #353535;
 }
 
 .carousel-container{
@@ -45,4 +46,14 @@ header{
     align-self: center;
     border-radius: 30px;
     display: none;
+}
+
+.otros-container{
+    margin: 4em 0;
+}
+.otros-container ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
 }
