@@ -18,8 +18,13 @@ echo json_encode($categorias);  // Convertir el array a JSON
 try {
     // Realizar una consulta para obtener datos de una tabla
     $stmt = $pdo->query("SELECT * FROM categoria");
-    // Devolver los datos como JSON
-    echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+    
+    // Verificar si hay resultados y devolverlos como JSON
+    if ($stmt) {
+        echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+    } else {
+        echo json_encode(["mensaje" => "No se encontraron datos"]);
+    }
 
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();

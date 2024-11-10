@@ -21,6 +21,6 @@ $username = 'ucyebez9xuaqeic8';
 $password = 'qsng4TiRbXu0uB0vqVq5';
 // Crear una nueva conexión PDO
 $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Para manejar errores
 
 ?>
