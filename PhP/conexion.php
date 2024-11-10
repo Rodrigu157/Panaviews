@@ -2,7 +2,7 @@
 $host = "localhost";            // Nombre del host
 $usuario = "root";              // Nombre de usuario
 $contraseña = "";       // Contraseña
-$base_datos = "panviews";      // Nombre de la base de datos
+$base_datos = "bdb7sbx26cvnng2lbiv9";      // Nombre de la base de datos
 
 // Crear conexión
 $conexion = new mysqli($host, $usuario, $contraseña, $base_datos);
