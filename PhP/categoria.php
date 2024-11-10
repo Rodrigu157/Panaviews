@@ -28,7 +28,7 @@ try {
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
-    */
+*/
 
 $host = 'bdb7sbx26cvnng2lbiv9-mysql.services.clever-cloud.com';
 $dbname = 'bdb7sbx26cvnng2lbiv9';
@@ -41,7 +41,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Para manejar errores
 
     // Consulta para obtener los datos de la tabla
-    $stmt = $pdo->query("SELECT * FROM nombre_de_tu_tabla");
+    $stmt = $pdo->query("SELECT * FROM categoria");
 
     // Verificar si hay resultados y devolverlos como JSON
     if ($stmt) {
