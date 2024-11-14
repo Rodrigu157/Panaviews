@@ -1,9 +1,9 @@
 <?php
 /*
-$host = "bdb7sbx26cvnng2lbiv9-mysql.services.clever-cloud.com";// Nombre del host
-$usuario = "ucyebez9xuaqeic8";              // Nombre de usuario
-$contraseña = "qsng4TiRbXu0uB0vqVq5";       // Contraseña
-$base_datos = "bdb7sbx26cvnng2lbiv9";      // Nombre de la base de datos
+$host = "localhost";// Nombre del host
+$usuario = "root";              // Nombre de usuario
+$contraseña = "";       // Contraseña
+$base_datos = "panaviews";      // Nombre de la base de datos
 
 // Crear conexión
 $conexion = new mysqli($host, $usuario, $contraseña, $base_datos);
